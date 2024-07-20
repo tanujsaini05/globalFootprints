@@ -1,0 +1,59 @@
+{% block title %}Page 1{% endblock %}
+{% block content %}
+    <h1>This is our first Django project</h1>
+    <p>Here, we are practicing our Django skills to handle the backend of any server.</p>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>S No.</th>
+                <th>Name</th>
+                <th>Roll No.</th>
+                <th>Age</th>
+                <th>Roll No. Check</th>
+                <th>Vote</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for person in peoples %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ person.Name }}</td>
+                <td>{{ person.Roll_no }}</td>
+                <td>{{ person.age }}</td>
+                <td>
+                    {% if person.Roll_no > 11222650 %}
+                    ✔
+                    {% else %}
+                    ❌
+                    {% endif %}
+                </td>
+                <td>
+                    {% if person.age > 19 %}
+                    ✔
+                    {% else %}
+                    ❌
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <form method="post">
+        {% csrf_token %}
+        <label for="veg_check">Enter vegetable to check:</label>
+        <input type="text" id="veg_check" name="veg_check">
+        <button type="submit">Check</button>
+    </form>
+
+    {% if result is not None %}
+        <p>
+            {% if result %}
+                ✔ Vegetable "{{ veg_check }}" is available.
+            {% else %}
+                ❌ Vegetable "{{ veg_check }}" is not available.
+            {% endif %}
+        </p>
+    {% endif %}
+{% endblock %}
