@@ -1,0 +1,183 @@
+.logo{
+    height: 30px;
+    width: 30px;  
+ }
+ 
+ .topnav{
+     display: flex;
+ }
+ 
+ .navbar{
+     display: flex;
+     margin-left: 2%;
+     margin-top: 2%;
+     column-gap: 40%;
+ }
+ 
+ #navbar2 ul{
+     display: flex;
+     margin-left: -30px;
+     column-gap: 20%;
+     list-style-type: none;
+ }
+ 
+ #navbar2 a{
+     color: black;
+     text-decoration: none;
+ }
+ #navbar2 a:hover {
+     color: red;
+ }
+ 
+ #navbar2 ul li a.active{
+     color: red;
+ }
+ .bgimg{
+     background-image: url('mountain.jpg');
+     background-size: cover;
+     padding-left: 10%;
+     padding-top: 7%;
+     }
+ 
+ .content h1{
+     margin-bottom: -20px;
+     font-size: 500%;
+     color: white;
+ }
+ 
+ .h3img{
+     color: white;
+     background-color: brown;
+ }
+ 
+ .content{
+     color: aliceblue;
+     
+ }
+ 
+ .enrollb{
+     background-color: white;
+     border-radius: 25px;
+     /* padding-left: 30px;
+     padding-right: 30px;
+     padding-top: 12px;
+     padding-bottom: 12px; */
+     padding: 20px;
+     border: none;
+     width: 200px;
+     font-weight: 700;
+     font-size: 17px;
+ }
+ 
+ .span1{
+     font-size: 270%;
+     color: black;   
+ }
+ 
+ .span2{
+     font-size: 70%;
+     
+ }
+ 
+ 
+ .p1{
+     color: #393933;
+     text-align: center;
+     font-size: 30px;
+ }
+ 
+ .panel1{
+     height: 20%;
+     width: 100%;
+     display: flex;
+     margin-left:20px;
+     margin-right: 10%;
+     column-gap: normal;
+     padding-top: 20px;
+ }
+ 
+ .span3{
+     border-radius: 50%;
+     background-color: grey;
+     padding: 10px;
+     margin-left: 39%;
+     ;
+ 
+ }
+ .icon{
+     font-size: 20px;
+     float: center;
+ }
+ 
+ .p2h{
+     /* text-align: justify; */
+     text-align: center;
+ }
+ 
+ .span4{
+     font-size: 30px;
+     color: black;
+ }
+ 
+ .panel3{
+     margin-left: 130px;
+ }
+ 
+ .heading{
+     font-family: "Roboto", sans-serif;
+     margin-left: 30px;
+ }
+ .tour1{
+     display: flex;
+ }
+ 
+ .abtour{
+     
+     height: 300px;
+     border-radius: 30px;
+     width: 270px;
+     margin-bottom: 20px;
+ }
+ 
+ .Buddha{
+     margin-top: -15px;
+     
+     /* text-align: center; */
+ }
+ .tour2{
+     border: black 1px solid;
+     border-radius: 30px;
+     border-color: #393933;
+     width: 270px;
+     height: 370px;
+     margin-left: 30px;
+    
+     
+ }
+ /* .buttons{
+     margin-top: 0px;
+     position: absolute;
+     margin-left: 200px;
+ }
+ .inner-div{
+     display: flexbox;
+     z-index: +1;
+     
+ } */
+ .inner-div {
+     display: flex; /* Use flex instead of flexbox */
+     align-items: center; /* Vertically center the items */
+     z-index: 1; /* z-index values don't need a + sign */
+   }
+   
+   .Buddha {
+     margin-right: 10px; /* Add some space between the text and button */
+   }
+   
+   .buttons {
+     margin-top: 0px; /* This is not necessary as the button will align vertically centered */
+     /* Remove position: absolute; */
+     /* Remove margin-left: 200px; */
+     /* Add any additional styling for the button here */
+   }
+    

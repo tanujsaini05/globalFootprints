@@ -1,59 +1,104 @@
-{% block title %}Page 1{% endblock %}
-{% block content %}
-    <h1>This is our first Django project</h1>
-    <p>Here, we are practicing our Django skills to handle the backend of any server.</p>
-    
-    <table border="1">
-        <thead>
-            <tr>
-                <th>S No.</th>
-                <th>Name</th>
-                <th>Roll No.</th>
-                <th>Age</th>
-                <th>Roll No. Check</th>
-                <th>Vote</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for person in peoples %}
-            <tr>
-                <td>{{ forloop.counter }}</td>
-                <td>{{ person.Name }}</td>
-                <td>{{ person.Roll_no }}</td>
-                <td>{{ person.age }}</td>
-                <td>
-                    {% if person.Roll_no > 11222650 %}
-                    ✔
-                    {% else %}
-                    ❌
-                    {% endif %}
-                </td>
-                <td>
-                    {% if person.age > 19 %}
-                    ✔
-                    {% else %}
-                    ❌
-                    {% endif %}
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    
-    <form method="post">
-        {% csrf_token %}
-        <label for="veg_check">Enter vegetable to check:</label>
-        <input type="text" id="veg_check" name="veg_check">
-        <button type="submit">Check</button>
-    </form>
+{% load static %}
 
-    {% if result is not None %}
-        <p>
-            {% if result %}
-                ✔ Vegetable "{{ veg_check }}" is available.
-            {% else %}
-                ❌ Vegetable "{{ veg_check }}" is not available.
-            {% endif %}
-        </p>
-    {% endif %}
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Natural Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'ui.css' %}">
+</head>
+<body>
+    <div class="navbar">
+    <div class="topnav">
+        <img src="C:\Users\tjwin\Downloads\mine.jpg"  class="logo">
+        </div>
+    <div id="navbar2">
+      <ul class="nav-items">
+        <li><a href="#" class="nav-link active">Home</a></li>
+        <li><a href="#" class="nav-link">News</a></li>
+        <li><a href="#" class="nav-link">Contact</a></li>
+        <li><a href="#" class="nav-link">About</a></li>
+      </ul>
+    </div>
+    <div>
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+
+    <div class="bgimg"> 
+  <div class="content">
+    <h1>Explore the sights<br>of the Mountains</h1>
+<P style="font-size: 20px;">A place where nature and adventure units</P>
+<button type="button" class="enrollb">Book Now!</button>
+<br>
+<br>
+  </div>      
+<!-- <p class="h1img"><h1>Explore the sights<br>of the Mountains</h1> A place where nature and adventure units</p> -->
+
+</div>
+<div class="content">
+  
+  <p class="p1"><span class="span1">Top values for you</span>  <br>
+    <span class="span2">Try variety of benefits using our services</span></p>
+</div>
+
+<div class="panel1">
+  <div class="panel2">
+    <span class="span3"><i class="fa-regular fa-paper-plane icon" ></i></span>
+    <p class="p2h"><span class="span4"> Airport Pickup</span> <br>
+    we provide escort from the airport<br> to the hotel</p>
+    
+  </div>
+
+  <div class="panel3">
+    <span class="span3"><i class="fa-solid fa-wallet"></i></span>
+    <p class="p2h"><span class="span4"> Easy booking</span> <br>
+    Quick and easy booking<br> for upcoming dates</p>
+    
+  </div>
+  <div class="panel3">
+    <span class="span3"><i class="fa-thin fa-people-group"></i></span>
+    <p class="p2h"><span class="span4"> Best tour guide</span> <br>
+    Our best tour guide is ready<br> to guide your tour</p>
+    
+  </div>
+  <div class="panel3">
+    <span class="span3"><i class="fa-solid fa-percent"></i></span>
+    <p class="p2h"><span class="span4"> Lot of prmos</span> <br>
+    various promotions and<br>drwaings of tours</p>
+    
+  </div>
+</div>
+<h1 class="heading"> Choose your tour</h1>
+
+<div class="tour1">
+  <div class="tour2">
+  <img class="abtour" src="{% static 'Premium Vector _ Mountain landscape with pine forest under starry night sky.jpeg'%}">
+ <div class="inner-div">
+  <p class="Buddha"><b> Buddha</b> <br>Symbol of peace<br> $20/piece</p>
+  <button class="buttons"><i class="fa-solid fa-arrow-right"></i></button>
+ </div>
+  
+  </div>
+
+  <div class="tour2">
+    <img class="abtour" src="{% static 'One Day in Philadelphia, PA_ Things to Do, Itinerary & Map.jpeg'%}">
+   <p class="Buddha"><b>Tom</b><br> Fast and Furious<br>Nhi btata</p>
+  </div>
+  <div class="tour2">
+    <img class="abtour" src="{% static 'Skyline - FluentVoyage'%}">
+    <p class="Buddha"><b>Two Cats</b><br>Smart and Cool<br>Rhnede</p>
+  </div>
+  <div class="tour2">
+    <img class="abtour" src="{% static 'Nature\'s Simplicity_ A Two-Tone Ode to Beauty.jpeg'%}">
+    <p class="Buddha"><b>Eagle</b><br> Positive Attitude<br> Can't Afford</p>
+    
+  </div>
+</div>
+</body>
+</html>
