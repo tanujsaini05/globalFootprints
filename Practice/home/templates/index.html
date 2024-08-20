@@ -4,18 +4,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"  content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Natural Blog</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{% static 'ui.css' %}">
+<link rel="stylesheet" href="{% static 'home/css/ui.css' %}">
 </head>
 <body>
     <div class="navbar">
     <div class="topnav">
-        <img src="C:\Users\tjwin\Downloads\mine.jpg"  class="logo">
+        <img src="{% static 'home/images/Green Modern Mind Map Brainstorm (1).png'%}"  class="logo">
         </div>
     <div id="navbar2">
       <ul class="nav-items">
@@ -36,7 +36,8 @@
 <P style="font-size: 20px;">A place where nature and adventure units</P>
 <button type="button" class="enrollb">Book Now!</button>
 <br>
-<br>
+<br><br><br><br><br>
+
   </div>      
 <!-- <p class="h1img"><h1>Explore the sights<br>of the Mountains</h1> A place where nature and adventure units</p> -->
 
@@ -56,13 +57,13 @@
   </div>
 
   <div class="panel3">
-    <span class="span3"><i class="fa-solid fa-wallet"></i></span>
+    <span class="span3"><i class="fa-solid fa-link"></i></span>
     <p class="p2h"><span class="span4"> Easy booking</span> <br>
     Quick and easy booking<br> for upcoming dates</p>
     
   </div>
   <div class="panel3">
-    <span class="span3"><i class="fa-thin fa-people-group"></i></span>
+    <span class="span3"><i class="fa-solid fa-tags"></i></span>
     <p class="p2h"><span class="span4"> Best tour guide</span> <br>
     Our best tour guide is ready<br> to guide your tour</p>
     
@@ -78,7 +79,7 @@
 
 <div class="tour1">
   <div class="tour2">
-  <img class="abtour" src="{% static 'Premium Vector _ Mountain landscape with pine forest under starry night sky.jpeg'%}">
+  <img class="abtour" src="{% static 'home/images/Premium Vector _ Mountain landscape with pine forest under starry night sky.jpeg'%}">
  <div class="inner-div">
   <p class="Buddha"><b> Buddha</b> <br>Symbol of peace<br> $20/piece</p>
   <button class="buttons"><i class="fa-solid fa-arrow-right"></i></button>
@@ -87,18 +88,32 @@
   </div>
 
   <div class="tour2">
-    <img class="abtour" src="{% static 'One Day in Philadelphia, PA_ Things to Do, Itinerary & Map.jpeg'%}">
+    <img class="abtour" src="{% static 'home/images/One Day in Philadelphia, PA_ Things to Do, Itinerary & Map.jpeg'%}">
    <p class="Buddha"><b>Tom</b><br> Fast and Furious<br>Nhi btata</p>
   </div>
   <div class="tour2">
-    <img class="abtour" src="{% static 'Skyline - FluentVoyage'%}">
+    <img class="abtour" src="{% static 'home/images/Skyline - FluentVoyage.jpeg'%}">
     <p class="Buddha"><b>Two Cats</b><br>Smart and Cool<br>Rhnede</p>
   </div>
   <div class="tour2">
-    <img class="abtour" src="{% static 'Nature\'s Simplicity_ A Two-Tone Ode to Beauty.jpeg'%}">
+    <img class="abtour" src="{% static 'home/images/Nature\'s Simplicity_ A Two-Tone Ode to Beauty.jpeg'%}">
     <p class="Buddha"><b>Eagle</b><br> Positive Attitude<br> Can't Afford</p>
     
   </div>
 </div>
+
+<h1>Blog Posts</h1>
+    <div class="swipe-container">
+        {% for post in posts %}
+            <div class="swipe-item">
+                <img src="{{ post.image.url }}" alt="{{ post.title }}" class="blog-image">
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.content|truncatewords:20 }}</p>
+                <p><strong>Author:</strong> {{ post.author_name }}</p>
+                <p><strong>Category:</strong> {{ post.get_category_display }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    <script src="{% static 'home/css/swipe.js' %}"></script>
 </body>
 </html>

@@ -33,9 +33,9 @@
      color: red;
  }
  .bgimg{
-     background-image: url('mountain.jpg');
+     background-image: url("../images/mountain.jpg");
      background-size: cover;
-     padding-left: 10%;
+     padding-left: 10%; 
      padding-top: 7%;
      }
  
@@ -101,7 +101,6 @@
      background-color: grey;
      padding: 10px;
      margin-left: 39%;
-     ;
  
  }
  .icon{
@@ -181,3 +180,33 @@
      /* Add any additional styling for the button here */
    }
     
+
+   .swipe-container {
+    display: flex;
+    overflow-x: scroll;
+    white-space: nowrap;
+    cursor: grab;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.swipe-item {
+    display: inline-block;
+    width: 300px;
+    margin-right: 10px;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.swipe-item img.blog-image {
+    width: 100%;
+    height: auto;
+}
+
+.active {
+    cursor: grabbing;
+}
